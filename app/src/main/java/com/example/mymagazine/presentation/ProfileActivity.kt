@@ -1,8 +1,10 @@
 package com.example.mymagazine.presentation
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.mymagazine.R
 import com.example.mymagazine.databinding.ActivityProfileBinding
 
 class ProfileActivity : AppCompatActivity() {
@@ -12,8 +14,26 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        supportActionBar?.hide()
         loadData()
+
+        clicks()
+    }
+
+    private fun clicks() {
+        binding.bottomNavView.setOnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.ic_home -> {
+                    val intent = Intent(this, Page1Activity::class.java)
+                    startActivity(intent)
+                }
+                R.id.ic_balans -> {}
+                R.id.ic_shops -> {}
+                R.id.ic_chat -> {}
+                R.id.ic_profile -> {}
+            }
+            true
+        }
     }
 
     private fun loadData() {

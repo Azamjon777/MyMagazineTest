@@ -20,4 +20,24 @@
     <string name="payment_method">Payment method</string>
     <string name="balance">Balance</string>
     <string name="trade_history">Trade history</string>
+    <string name="help">Help</string>
+    <string name="log_out">Log out</string>
+    <string name="home">Home</string>
+    <string name="favourite">Favourite</string>
+    <string name="shop">Shop</string>
+    <string name="chat">Chat</string>
+    <string name="_1539">$1539</string>
+    <string name="trade_by">Trade by</string>
+    <string name="bata">bata</string>
+    <string name="location">Location</string>
+    <string name="what_are_you_looking_for"><font size="12">What are you looking for ?</font></string>
+    <string name="phones">Phones</string>
+    <string name="headphones">Headphones</string>
+    <string name="games">Games</string>
+    <string name="furniture">Furniture</string>
+    <string name="kids">Kids</string>
+    <string name="latest">Latest</string>
+    <string name="samsung">Samsung</string>
+    <string name="_180_000">180,000</string>
+    <string name="dollar">$</string>
 </resources>
