@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="100dp"
+    android:layout_height="130dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp">
+
+    <ImageView
+        android:id="@+id/item_img_latest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/latest_img1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="35dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="71dp"
+        android:backgroundTint="@color/gray"
+        app:cardCornerRadius="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/item_category_latest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/games"
+            android:textColor="@color/black"
+            android:textSize="6sp" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/item_product_name_latest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="86dp"
+        android:text="@string/samsung"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/dollar"
+        android:textColor="@color/white"
+        android:textSize="8dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/item_product_name_latest"
+        app:layout_constraintTop_toBottomOf="@id/item_product_name_latest" />
+
+    <TextView
+        android:id="@+id/item_price_of_model_latest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/_180_000"
+        android:textColor="@color/white"
+        android:textSize="8dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/item_product_name_latest"
+        app:layout_constraintTop_toBottomOf="@id/item_product_name_latest" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/ic_profile">
+
+    <fragment
+        android:id="@+id/ic_home"
+        android:name="com.example.mymagazine.presentation.fragments.Page1Fragment"
+        android:label="Page1Fragment" >
+        <action
+            android:id="@+id/action_page1Fragment_to_profileFragment"
+            app:destination="@id/ic_profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/ic_profile"
+        android:name="com.example.mymagazine.presentation.fragments.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_page1Fragment"
+            app:destination="@id/ic_home" />
+    </fragment>
+</navigation>
