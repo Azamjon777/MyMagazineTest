@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.MainContainerActivity">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/menu_img"
@@ -226,18 +224,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/img_phones" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_latest"
+    <HorizontalScrollView
+        android:id="@+id/scroll_latest"
         android:layout_width="match_parent"
         android:layout_height="130dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_latest"
-        tools:itemCount="4"
-        tools:listitem="@layout/item_latest">
+        app:layout_constraintTop_toBottomOf="@id/text_latest">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:orientation="horizontal">
+            
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
 
     <TextView
         android:id="@+id/text_flash_sale"
@@ -249,18 +253,21 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recycler_latest" />
+        app:layout_constraintTop_toBottomOf="@id/scroll_latest" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_flash_sale"
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_flash_sale"
-        tools:itemCount="3"
-        tools:listitem="@layout/item_flash_sale">
+        app:layout_constraintTop_toBottomOf="@id/text_flash_sale">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="200dp">
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

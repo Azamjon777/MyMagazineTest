@@ -2,22 +2,22 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/ic_profile">
+    app:startDestination="@id/profile_fragment">
 
     <fragment
-        android:id="@+id/ic_home"
+        android:id="@+id/home_fragment"
         android:name="com.example.mymagazine.presentation.fragments.Page1Fragment"
-        android:label="Page1Fragment" >
+        android:label="Page1Fragment">
         <action
-            android:id="@+id/action_page1Fragment_to_profileFragment"
+            android:id="@+id/action_home_fragment_to_profile_fragment"
             app:destination="@id/ic_profile" />
     </fragment>
     <fragment
-        android:id="@+id/ic_profile"
+        android:id="@+id/profile_fragment"
         android:name="com.example.mymagazine.presentation.fragments.ProfileFragment"
-        android:label="ProfileFragment" >
+        android:label="ProfileFragment">
         <action
-            android:id="@+id/action_profileFragment_to_page1Fragment"
+            android:id="@+id/action_profile_fragment_to_home_fragment"
             app:destination="@id/ic_home" />
     </fragment>
 </navigation>

@@ -1,13 +1,14 @@
 package com.example.mymagazine.presentation.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.mymagazine.R
 import com.example.mymagazine.databinding.FragmentProfileBinding
+import com.example.mymagazine.presentation.RegisterContainerActivity
 
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
@@ -18,6 +19,7 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -25,20 +27,10 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loadData()
-
-        clicks()
-    }
-
-    private fun clicks() {
-        binding.bottomNavView.setOnNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.ic_home -> {}
-                R.id.ic_balans -> {}
-                R.id.ic_shops -> {}
-                R.id.ic_chat -> {}
-                R.id.ic_profile -> {}
-            }
-            true
+        binding.cardLogOut.setOnClickListener {
+            val intent = Intent(requireActivity(), RegisterContainerActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
         }
     }
 

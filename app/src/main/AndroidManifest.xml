@@ -14,10 +14,7 @@
         android:theme="@style/Theme.MyMagazine"
         tools:targetApi="31">
         <activity
-            android:name=".NewContainerActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.MainActivity"
+            android:name=".presentation.RegisterContainerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,17 +23,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".presentation.Page1Activity"
+            android:name=".presentation.MainContainerActivity"
             android:exported="false" />
-        <activity
-            android:name=".presentation.ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.SignInActivity"
-            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

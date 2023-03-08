@@ -1,6 +1,6 @@
 package com.example.mymagazine.data.models
 
-data class Latest(
+data class LatestItem(
     val category: String,
     val image_url: String,
     val name: String,

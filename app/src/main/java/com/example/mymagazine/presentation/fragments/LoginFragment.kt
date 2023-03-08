@@ -1,5 +1,7 @@
 package com.example.mymagazine.presentation.fragments
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
@@ -12,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.mymagazine.MyViewModel
 import com.example.mymagazine.R
 import com.example.mymagazine.databinding.FragmentLoginBinding
+import com.example.mymagazine.presentation.MainContainerActivity
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
@@ -49,15 +52,30 @@ class LoginFragment : Fragment() {
         showPassword(isShowPass)
 
         binding.btnLogin.setOnClickListener {
-            val name = binding.etFirstNameLogin.text.toString()
-            val password = binding.etPassword.text.toString()
-            if (viewModel.validatePassword(name, password)) {
-               /* val intent = Intent(requireActivity(), ProfileActivity::class.java)
-                //снизу задаем флаг, то что мы будем закрывать за собой активити
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
-                startActivity(intent)*/
-            }
+            safeData()
         }
+    }
+
+    @SuppressLint("CommitPrefEdits")
+    private fun safeData() {
+        val name = binding.etFirstNameLogin.text.toString()
+        val password = binding.etPassword.text.toString()
+        if (viewModel.validatePassword(name, password)) {
+            val sharedPref =
+                requireActivity().getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+            val editor = sharedPref.edit()
+            editor.apply {
+                putString("FIRST_NAME", name)
+            }.apply()
+            val intent = Intent(requireActivity(), MainContainerActivity::class.java)
+            //снизу задаем флаг, то что мы будем закрывать за собой активити
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+        }
+    }
+
+    private fun safeName() {
+
     }
 
     private fun showPassword(isShow: Boolean) {
