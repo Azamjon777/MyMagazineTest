@@ -11,7 +11,7 @@ import retrofit2.Response
 class MyViewModel(application: Application) : AndroidViewModel(application) {
     var repository = Repository()
     val myLatestList: MutableLiveData<Response<LatestItemList>> = MutableLiveData()
-    val myFlashSaleList: MutableLiveData<Response<FlashSaleItemList>> = MutableLiveData()
+    val myFlashSaleList: MutableLiveData<FlashSaleItemList> = MutableLiveData()
 
     suspend fun getLatestList() {
         //это сопрограмма которая помогает работать в другом потоке

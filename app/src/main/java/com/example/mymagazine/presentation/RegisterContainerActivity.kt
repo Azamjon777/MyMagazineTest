@@ -9,6 +9,5 @@ class RegisterContainerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_container)
         supportActionBar?.hide()
-
     }
 }

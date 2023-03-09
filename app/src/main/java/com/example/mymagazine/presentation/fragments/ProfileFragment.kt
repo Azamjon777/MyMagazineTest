@@ -35,7 +35,7 @@ class ProfileFragment : Fragment() {
     }
 
     private fun loadData() {
-        val shared = requireActivity().getSharedPreferences("sharedPref", Context.MODE_PRIVATE)
+        val shared = requireActivity().getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
         val savedName = shared.getString("FIRST_NAME", null)
 
         binding.myName.text = savedName.toString()

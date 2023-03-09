@@ -1,6 +1,5 @@
 package com.example.mymagazine.presentation.fragments
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -56,7 +55,6 @@ class LoginFragment : Fragment() {
         }
     }
 
-    @SuppressLint("CommitPrefEdits")
     private fun safeData() {
         val name = binding.etFirstNameLogin.text.toString()
         val password = binding.etPassword.text.toString()
@@ -72,10 +70,6 @@ class LoginFragment : Fragment() {
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
         }
-    }
-
-    private fun safeName() {
-
     }
 
     private fun showPassword(isShow: Boolean) {

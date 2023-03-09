@@ -11,7 +11,7 @@ class Repository {
         return RetrofitInstance.apiService.getLatestProducts()
     }
 
-    suspend fun getFlashSale(): Response<FlashSaleItemList> {
+    suspend fun getFlashSale(): FlashSaleItemList {
         return RetrofitInstance.apiService.getFlashSaleProducts()
     }
 }

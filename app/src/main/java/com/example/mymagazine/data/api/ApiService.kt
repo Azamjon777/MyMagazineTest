@@ -15,5 +15,5 @@ interface ApiService {
     suspend fun getLatestProducts(): Response<LatestItemList>
 
     @GET("v3/a9ceeb6e-416d-4352-bde6-2203416576ac")
-    suspend fun getFlashSaleProducts(): Response<FlashSaleItemList>
+    suspend fun getFlashSaleProducts(): FlashSaleItemList
 }

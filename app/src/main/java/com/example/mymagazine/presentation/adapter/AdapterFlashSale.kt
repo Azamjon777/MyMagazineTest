@@ -13,11 +13,9 @@ import com.bumptech.glide.Glide
 import com.example.mymagazine.R
 import com.example.mymagazine.data.models.FlashSaleItem
 
-class AdapterFlashSale(private val context: Context) :
+class AdapterFlashSale(private val context: Context, val listener: Listener) :
     RecyclerView.Adapter<AdapterFlashSale.ViewHolder>() {
     var listFlashSaleProducts = emptyList<FlashSaleItem>()
-
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
@@ -40,6 +38,10 @@ class AdapterFlashSale(private val context: Context) :
         Glide.with(context)
             .load(listFlashSaleProducts[position].image_url)
             .into(imageViewF)
+
+        holder.itemView.setOnClickListener {
+            listener.onClick(listFlashSaleProducts[position])
+        }
     }
 
     override fun getItemCount(): Int {
@@ -52,5 +54,12 @@ class AdapterFlashSale(private val context: Context) :
         notifyDataSetChanged()
 
         Log.d("Flash", listFlashSaleProducts.toString())
+    }
+
+
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
+
+    interface Listener {
+        fun onClick(flashItem: FlashSaleItem)
     }
 }
