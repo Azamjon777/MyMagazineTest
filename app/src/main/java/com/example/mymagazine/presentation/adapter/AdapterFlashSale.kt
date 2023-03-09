@@ -2,6 +2,7 @@ package com.example.mymagazine.presentation.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,8 +13,8 @@ import com.bumptech.glide.Glide
 import com.example.mymagazine.R
 import com.example.mymagazine.data.models.FlashSaleItem
 
-class AdapterFlashLatest(private val context: Context) :
-    RecyclerView.Adapter<AdapterFlashLatest.ViewHolder>() {
+class AdapterFlashSale(private val context: Context) :
+    RecyclerView.Adapter<AdapterFlashSale.ViewHolder>() {
     var listFlashSaleProducts = emptyList<FlashSaleItem>()
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
@@ -49,5 +50,7 @@ class AdapterFlashLatest(private val context: Context) :
     fun setFlashList(listFlashSale: List<FlashSaleItem>) {
         listFlashSaleProducts = listFlashSale
         notifyDataSetChanged()
+
+        Log.d("Flash", listFlashSaleProducts.toString())
     }
 }

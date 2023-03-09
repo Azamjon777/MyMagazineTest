@@ -10,7 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mymagazine.MyViewModel
 import com.example.mymagazine.databinding.FragmentPage1Binding
-import com.example.mymagazine.presentation.adapter.AdapterFlashLatest
+import com.example.mymagazine.presentation.adapter.AdapterFlashSale
 import com.example.mymagazine.presentation.adapter.AdapterLatest
 import kotlinx.coroutines.launch
 
@@ -19,9 +19,10 @@ class Page1Fragment : Fragment() {
     private val binding: FragmentPage1Binding
         get() = _binding ?: throw RuntimeException("FragmentPage1Binding == null")
 
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerViewLatest: RecyclerView
+    private lateinit var recyclerViewFlashSale: RecyclerView
     private lateinit var myAdapterLatest: AdapterLatest
-    private lateinit var myAdapterFlash: AdapterFlashLatest
+    private lateinit var myAdapterFlash: AdapterFlashSale
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,9 +31,15 @@ class Page1Fragment : Fragment() {
 
         val viewModel = ViewModelProvider(requireActivity())[MyViewModel::class.java]
         _binding = FragmentPage1Binding.inflate(inflater, container, false)
-        recyclerView = binding.recyclerLatest
+        recyclerViewLatest = binding.recyclerLatest
+        recyclerViewFlashSale = binding.recyclerFlashSale
+
         myAdapterLatest = AdapterLatest(requireActivity())
-        recyclerView.adapter = myAdapterLatest
+        myAdapterFlash = AdapterFlashSale(requireActivity())
+
+        recyclerViewLatest.adapter = myAdapterLatest
+        recyclerViewFlashSale.adapter = myAdapterFlash
+
         lifecycleScope.launch {
             viewModel.getLatestList()
             viewModel.getFlashSaleList()
