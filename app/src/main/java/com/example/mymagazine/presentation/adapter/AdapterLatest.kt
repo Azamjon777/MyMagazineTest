@@ -14,7 +14,7 @@ import com.example.mymagazine.domain.models.LatestItemD
 
 class AdapterLatest(private val context: Context) :
     RecyclerView.Adapter<AdapterLatest.ViewHolder>() {
-    var listLatestProducts = emptyList<LatestItemD>()
+    var listLatestProducts = emptyList<com.example.mymagazine.domain.models.LatestItemD>()
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
@@ -42,7 +42,7 @@ class AdapterLatest(private val context: Context) :
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setListLatest(listLatest: List<LatestItemD>) {
+    fun setListLatest(listLatest: List<com.example.mymagazine.domain.models.LatestItemD>) {
         listLatestProducts = listLatest
         notifyDataSetChanged()
     }

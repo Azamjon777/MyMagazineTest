@@ -15,7 +15,7 @@ import com.example.mymagazine.domain.models.FlashSaleItemD
 
 class AdapterFlashSale(private val context: Context, val listener: Listener) :
     RecyclerView.Adapter<AdapterFlashSale.ViewHolder>() {
-    var listFlashSaleProducts = emptyList<FlashSaleItemD>()
+    var listFlashSaleProducts = emptyList<com.example.mymagazine.domain.models.FlashSaleItemD>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
@@ -49,7 +49,7 @@ class AdapterFlashSale(private val context: Context, val listener: Listener) :
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setFlashList(listFlashSale: List<FlashSaleItemD>) {
+    fun setFlashList(listFlashSale: List<com.example.mymagazine.domain.models.FlashSaleItemD>) {
         listFlashSaleProducts = listFlashSale
         notifyDataSetChanged()
 
@@ -60,6 +60,6 @@ class AdapterFlashSale(private val context: Context, val listener: Listener) :
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
     interface Listener {
-        fun onClick(flashItem: FlashSaleItemD)
+        fun onClick(flashItem: com.example.mymagazine.domain.models.FlashSaleItemD)
     }
 }

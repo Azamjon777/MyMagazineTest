@@ -47,7 +47,7 @@ class Page1Fragment : Fragment(), AdapterFlashSale.Listener {
             viewModel.getFlashSaleList()
         }
         viewModel.myLatestList.observe(viewLifecycleOwner) {
-            myAdapterLatest.setListLatest(it.body()!!.latest)
+            myAdapterLatest.setListLatest(it.latest)
         }
 
         viewModel.myFlashSaleList.observe(viewLifecycleOwner) {
@@ -68,7 +68,7 @@ class Page1Fragment : Fragment(), AdapterFlashSale.Listener {
         }
     }
 
-    override fun onClick(flashItem: FlashSaleItemD) {
+    override fun onClick(flashItem: com.example.mymagazine.domain.models.FlashSaleItemD) {
         val page2Fragment = Page2Fragment()
 
         val args = Bundle().apply {

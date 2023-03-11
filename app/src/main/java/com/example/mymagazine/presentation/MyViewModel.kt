@@ -6,11 +6,10 @@ import androidx.lifecycle.MutableLiveData
 import com.example.mymagazine.data.repository.Repository
 import com.example.mymagazine.domain.models.FlashSaleItemListD
 import com.example.mymagazine.domain.models.LatestItemListD
-import retrofit2.Response
 
 class MyViewModel(application: Application) : AndroidViewModel(application) {
     var repository = Repository()
-    val myLatestList: MutableLiveData<Response<LatestItemListD>> = MutableLiveData()
+    val myLatestList: MutableLiveData<LatestItemListD> = MutableLiveData()
     val myFlashSaleList: MutableLiveData<FlashSaleItemListD> = MutableLiveData()
 
     suspend fun getLatestList() {
