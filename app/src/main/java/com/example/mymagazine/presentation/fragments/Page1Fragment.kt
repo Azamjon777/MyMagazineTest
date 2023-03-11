@@ -10,7 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mymagazine.MyViewModel
 import com.example.mymagazine.R
-import com.example.mymagazine.data.models.FlashSaleItem
+import com.example.mymagazine.domain.models.FlashSaleItem
 import com.example.mymagazine.databinding.FragmentPage1Binding
 import com.example.mymagazine.presentation.adapter.AdapterFlashSale
 import com.example.mymagazine.presentation.adapter.AdapterLatest

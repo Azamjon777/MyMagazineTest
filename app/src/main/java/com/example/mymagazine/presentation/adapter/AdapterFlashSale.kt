@@ -11,7 +11,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mymagazine.R
-import com.example.mymagazine.data.models.FlashSaleItem
+import com.example.mymagazine.domain.models.FlashSaleItem
 
 class AdapterFlashSale(private val context: Context, val listener: Listener) :
     RecyclerView.Adapter<AdapterFlashSale.ViewHolder>() {

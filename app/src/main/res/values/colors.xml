@@ -16,4 +16,6 @@
     <color name="disable_bottom_nav_color">#BCBCBC</color>
     <color name="enable_bottom_nav_color">#5A5A5A</color>
     <color name="line_color">#545589</color>
+    <color name="bottom_page2_color">#181726</color>
+    <color name="small_card_color">#4E55D7</color>
 </resources>

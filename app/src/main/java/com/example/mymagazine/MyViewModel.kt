@@ -3,9 +3,9 @@ package com.example.mymagazine
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.example.mymagazine.data.models.FlashSaleItemList
-import com.example.mymagazine.data.models.LatestItemList
 import com.example.mymagazine.data.repository.Repository
+import com.example.mymagazine.domain.models.FlashSaleItemList
+import com.example.mymagazine.domain.models.LatestItemList
 import retrofit2.Response
 
 class MyViewModel(application: Application) : AndroidViewModel(application) {
@@ -23,8 +23,20 @@ class MyViewModel(application: Application) : AndroidViewModel(application) {
         myFlashSaleList.value = repository.getFlashSale()
     }
 
-    fun validatePassword(name: String, password: String): Boolean {
-        return name.isNotEmpty() && password.isNotEmpty()
+    fun validatePassword(password: String): Boolean {
+        return password.isNotEmpty()
     }
 
+    fun validateName(name: String): Boolean {
+        return name.isNotEmpty()
+    }
+
+    fun isEmailValid(email: String): Boolean {
+        val pattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+".toRegex()
+        return email.matches(pattern)
+    }
+
+    fun validName(name: String): Boolean {
+        return name.isNotEmpty()
+    }
 }

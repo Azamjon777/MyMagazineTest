@@ -58,17 +58,23 @@ class LoginFragment : Fragment() {
     private fun safeData() {
         val name = binding.etFirstNameLogin.text.toString()
         val password = binding.etPassword.text.toString()
-        if (viewModel.validatePassword(name, password)) {
-            val sharedPref =
-                requireActivity().getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
-            val editor = sharedPref.edit()
-            editor.apply {
-                putString("FIRST_NAME", name)
-            }.apply()
-            val intent = Intent(requireActivity(), MainContainerActivity::class.java)
-            //снизу задаем флаг, то что мы будем закрывать за собой активити
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
-            startActivity(intent)
+        if (viewModel.validatePassword(password)) {
+            if (viewModel.validName(name)) {
+                val sharedPref =
+                    requireActivity().getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+                val editor = sharedPref.edit()
+                editor.apply {
+                    putString("FIRST_NAME", name)
+                }.apply()
+                val intent = Intent(requireActivity(), MainContainerActivity::class.java)
+                //снизу задаем флаг, то что мы будем закрывать за собой активити
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+            } else {
+                binding.etFirstNameLogin.error = getString(R.string.enter_name)
+            }
+        } else {
+            binding.etPassword.error = getString(R.string.enter_password)
         }
     }
 

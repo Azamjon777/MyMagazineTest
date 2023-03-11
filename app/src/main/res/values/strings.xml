@@ -46,4 +46,17 @@
     <string name="off">% off</string>
     <string name="off_text"> % off</string>
     <string name="_30">30</string>
+    <string name="new_balance_sneakers">New balance \nSneakers</string>
+    <string name="_22_50">$ 22,50</string>
+    <string name="description_text">Features waterproof, fire, air resistant shoes. all \nchanged when the country of fire attacked</string>
+    <string name="_3_9">3.9</string>
+    <string name="_4000_reviews">(4000 reviews)</string>
+    <string name="color">Color</string>
+    <string name="quantity">Quantity:</string>
+    <string name="_2_500">#2,500</string>
+    <string name="fill_correct">Заполните корректно</string>
+    <string name="enter_correct_name">Пользователя с таким именем нет</string>
+    <string name="enter_name">Введите имя</string>
+    <string name="enter_password">Введите пароль</string>
+    <string name="view_all">View all</string>
 </resources>

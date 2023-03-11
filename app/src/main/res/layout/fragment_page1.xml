@@ -229,6 +229,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/img_phones" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/view_all"
+            android:layout_marginEnd="10dp"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/text_latest"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/text_latest" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_latest"
             android:layout_width="match_parent"
@@ -254,6 +264,16 @@
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/recycler_latest" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/view_all"
+            android:layout_marginEnd="10dp"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/text_flash_sale"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/text_flash_sale" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_flash_sale"
