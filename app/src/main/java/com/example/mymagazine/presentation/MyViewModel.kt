@@ -1,17 +1,17 @@
-package com.example.mymagazine
+package com.example.mymagazine.presentation
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.mymagazine.data.repository.Repository
-import com.example.mymagazine.domain.models.FlashSaleItemList
-import com.example.mymagazine.domain.models.LatestItemList
+import com.example.mymagazine.domain.models.FlashSaleItemListD
+import com.example.mymagazine.domain.models.LatestItemListD
 import retrofit2.Response
 
 class MyViewModel(application: Application) : AndroidViewModel(application) {
     var repository = Repository()
-    val myLatestList: MutableLiveData<Response<LatestItemList>> = MutableLiveData()
-    val myFlashSaleList: MutableLiveData<FlashSaleItemList> = MutableLiveData()
+    val myLatestList: MutableLiveData<Response<LatestItemListD>> = MutableLiveData()
+    val myFlashSaleList: MutableLiveData<FlashSaleItemListD> = MutableLiveData()
 
     suspend fun getLatestList() {
         //это сопрограмма которая помогает работать в другом потоке

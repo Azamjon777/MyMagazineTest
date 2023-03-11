@@ -11,11 +11,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mymagazine.R
-import com.example.mymagazine.domain.models.FlashSaleItem
+import com.example.mymagazine.domain.models.FlashSaleItemD
 
 class AdapterFlashSale(private val context: Context, val listener: Listener) :
     RecyclerView.Adapter<AdapterFlashSale.ViewHolder>() {
-    var listFlashSaleProducts = emptyList<FlashSaleItem>()
+    var listFlashSaleProducts = emptyList<FlashSaleItemD>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
@@ -49,7 +49,7 @@ class AdapterFlashSale(private val context: Context, val listener: Listener) :
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setFlashList(listFlashSale: List<FlashSaleItem>) {
+    fun setFlashList(listFlashSale: List<FlashSaleItemD>) {
         listFlashSaleProducts = listFlashSale
         notifyDataSetChanged()
 
@@ -60,6 +60,6 @@ class AdapterFlashSale(private val context: Context, val listener: Listener) :
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
     interface Listener {
-        fun onClick(flashItem: FlashSaleItem)
+        fun onClick(flashItem: FlashSaleItemD)
     }
 }

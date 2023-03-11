@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mymagazine.MyViewModel
+import com.example.mymagazine.presentation.MyViewModel
 import com.example.mymagazine.R
-import com.example.mymagazine.domain.models.FlashSaleItem
+import com.example.mymagazine.domain.models.FlashSaleItemD
 import com.example.mymagazine.databinding.FragmentPage1Binding
 import com.example.mymagazine.presentation.adapter.AdapterFlashSale
 import com.example.mymagazine.presentation.adapter.AdapterLatest
@@ -68,7 +68,7 @@ class Page1Fragment : Fragment(), AdapterFlashSale.Listener {
         }
     }
 
-    override fun onClick(flashItem: FlashSaleItem) {
+    override fun onClick(flashItem: FlashSaleItemD) {
         val page2Fragment = Page2Fragment()
 
         val args = Bundle().apply {

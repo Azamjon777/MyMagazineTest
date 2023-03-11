@@ -1,7 +1,7 @@
 package com.example.mymagazine.data.models
 
-import com.example.mymagazine.domain.models.LatestItem
+import com.example.mymagazine.domain.models.LatestItemD
 
 data class LatestItemList(
-    val latest: List<LatestItem>
+    val latest: List<LatestItemD>
 )

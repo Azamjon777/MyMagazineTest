@@ -10,11 +10,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mymagazine.R
-import com.example.mymagazine.domain.models.LatestItem
+import com.example.mymagazine.domain.models.LatestItemD
 
 class AdapterLatest(private val context: Context) :
     RecyclerView.Adapter<AdapterLatest.ViewHolder>() {
-    var listLatestProducts = emptyList<LatestItem>()
+    var listLatestProducts = emptyList<LatestItemD>()
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
@@ -42,7 +42,7 @@ class AdapterLatest(private val context: Context) :
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setListLatest(listLatest: List<LatestItem>) {
+    fun setListLatest(listLatest: List<LatestItemD>) {
         listLatestProducts = listLatest
         notifyDataSetChanged()
     }

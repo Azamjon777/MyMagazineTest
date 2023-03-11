@@ -1,9 +1,8 @@
 package com.example.mymagazine.domain.models
 
-data class FlashSaleItem(
+data class LatestItemD(
     val category: String,
-    val discount: Int,
     val image_url: String,
     val name: String,
-    val price: Double
+    val price: Int
 )
