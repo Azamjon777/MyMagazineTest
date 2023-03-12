@@ -47,6 +47,7 @@ class Page1Fragment : Fragment(), AdapterFlashSale.Listener {
             viewModel.getLatestList()
             viewModel.getFlashSaleList()
         }
+
         viewModel.myLatestList.observe(viewLifecycleOwner) {
             myAdapterLatest.setListLatest(it.latest)
         }
