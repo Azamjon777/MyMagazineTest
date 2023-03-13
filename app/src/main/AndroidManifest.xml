@@ -17,6 +17,7 @@
         android:theme="@style/Theme.MyMagazine"
         tools:targetApi="31">
         <activity
+            android:screenOrientation="nosensor"
             android:name=".presentation.RegisterContainerActivity"
             android:exported="true">
             <intent-filter>
@@ -26,6 +27,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:screenOrientation="nosensor"
             android:name=".presentation.MainContainerActivity"
             android:exported="false" />
 
